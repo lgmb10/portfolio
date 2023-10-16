@@ -2,6 +2,9 @@
 $white : #ffffff;
 $black : #000000;
 
+// FONT
+$righteous : 'Righteous', sans-serif;
+
 // MEDIA-QUERIES
 @mixin desktop_xl {
   @media (min-width: 1200px) {
