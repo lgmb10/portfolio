@@ -1,10 +1,3 @@
-// COLORS
-$white : #ffffff;
-$black : #000000;
-
-// FONT
-$righteous : 'Righteous', sans-serif;
-
 // MEDIA-QUERIES
 @mixin desktop_xl {
   @media (min-width: 1200px) {
@@ -29,3 +22,28 @@ $righteous : 'Righteous', sans-serif;
     @content;
   }
 }
+
+// COLORS
+:root{
+  --white : #ffffff;
+  --black : #000000;
+  --purple : #770885;
+  --background : #0E0024;
+  --container-border: 0.7rem;
+
+  @include tablet{
+    --container-border: 1.5rem;
+  }
+}
+
+$background : #0E0024;
+
+
+
+
+// FONT
+$righteous : 'Righteous', sans-serif;
+
+
+// UTILS
+$transition : ease-in-out 0.2s;

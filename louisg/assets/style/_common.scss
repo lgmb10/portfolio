@@ -1,8 +1,45 @@
 body{
-  font-family: $righteous;
+  font-family: Arial, sans-serif;
   background-color: #00000f;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
 }
 
 a{
   text-decoration: none;
 }
+
+#blur_cursor {
+  display: var(--touchscreen-display, block);
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  top: var(--y, 0);
+  left: var(--x, 0);
+  transform: translateZ(-10px) translate(-50%, -50%);
+  backdrop-filter: blur(20px);
+  transition: transform .2s;
+
+  @include desktop{
+    display: block;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;;
+    background: radial-gradient(circle at center, rgba(0,0,0,0.5), rgba(0,0,0,0));
+    filter: blur(30px);
+    border-radius: 50%;
+    position: absolute;
+    top: 0; left: 0;
+  }
+}
+
