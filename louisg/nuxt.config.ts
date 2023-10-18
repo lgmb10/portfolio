@@ -5,6 +5,8 @@ export default defineNuxtConfig({
         "~/assets/style/main.scss",
     ],
     app: {
+        baseURL: '/lgambier.github.io/', // baseURL: '/<repository>/'
+        buildAssetsDir: 'assets',
         head: {
             link: [
                 { rel: "preconnect", href: "https://fonts.googleapis.com" },
