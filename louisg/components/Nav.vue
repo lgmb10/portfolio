@@ -154,7 +154,7 @@ function closeNavbarOnMenuClick() {
     .menu_container {
       opacity: 0;
       @include desktop {
-        //left: inherit;
+        opacity: 1;
       }
     }
   }
@@ -213,6 +213,12 @@ function closeNavbarOnMenuClick() {
         }
         &:nth-child(odd) {
           margin-right: -10rem;
+        }
+
+        @include tablet{
+          &:nth-child(even), &:nth-child(odd) {
+            margin: 0;
+          }
         }
       }
 
