@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     ],
     app: {
         baseURL: '/lgambier.github.io/', // baseURL: '/<repository>/'
-        buildAssetsDir: 'dist/assets',
+        buildAssetsDir: 'assets',
         head: {
             link: [
                 { rel: "preconnect", href: "https://fonts.googleapis.com" },
