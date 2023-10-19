@@ -23,7 +23,7 @@ onMounted(() => {
     );
   }
 
-  //disable mouse animation on touchscreen
+  // Disable mouse animation on touchscreen
   window.matchMedia("(pointer: coarse)").matches ? document.documentElement.style.setProperty('--touchscreen-display', ('none')) : document.documentElement.style.setProperty('--touchscreen-display', ('block'));
 })
 

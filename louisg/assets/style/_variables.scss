@@ -23,12 +23,7 @@
   }
 }
 
-// COLORS
 :root{
-  --white : #ffffff;
-  --black : #000000;
-  --purple : #770885;
-  --background : #0E0024;
   --container-border: 0.7rem;
 
   @include tablet{
@@ -36,7 +31,16 @@
   }
 }
 
-$background : #0E0024;
+$white : #ffffff;
+$black : #000000;
+$background : #09061f;
+$purple : #770885;
+$border : #b9b9b9;
+
+$a : #a26aa9;
+$b : #4f318c;
+$c : #fbe0cd;
+$d : #776ab7;
 
 
 

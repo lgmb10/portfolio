@@ -11,9 +11,12 @@
       </div>
       <div class="menu_container">
         <ul class="menu">
-          <li @click="closeNavbarOnMenuClick" v-for="item in ['Formations', 'Expérience', 'Compétences', 'Passions']">
-            <a class="navigation" :href="'#'+item.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')"
-               target="_self">{{ item }}</a>
+          <li @click="closeNavbarOnMenuClick" v-for="item in navList">
+            <a class="navigation" :href="'#'+item.title.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')"
+               target="_self">
+              <span class="nav_title">{{ item.title }}</span>
+              <span class="nav_icon"><Icon :name="item.icon"></Icon></span>
+            </a>
           </li>
         </ul>
       </div>
@@ -23,6 +26,13 @@
 
 <script setup>
 let navIcon, navMenu, mainContainer = null;
+
+const navList = [
+  {title: "Formations", icon: "fa6-solid:graduation-cap"},
+  {title: "Expérience", icon: "fa6-solid:briefcase"},
+  {title: "Compétences", icon: "fa6-solid:award"},
+  {title: "Passions", icon: "fa6-solid:heart"},
+]
 
 onMounted(() => {
   navIcon = document.querySelector("#nav_icon");
@@ -83,12 +93,16 @@ function closeNavbarOnMenuClick() {
   transition: .5s ease-in-out;
   cursor: pointer;
 
+  @include desktop {
+    display: none;
+  }
+
   span {
     display: block;
     position: absolute;
     height: 3px;
     width: 100%;
-    background: var(--white);
+    background: $white;
     border-radius: 5px;
     opacity: 1;
     left: 0;
@@ -149,6 +163,19 @@ function closeNavbarOnMenuClick() {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  border-radius: var(--container-border);
+  border: none;
+
+  @include desktop {
+    right: -1.75rem;
+    width: inherit;
+    height: auto;
+    pointer-events: all;
+    transform: translateY(-50%);
+    top: 50%;
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba($border, .2);
+  }
 
   &_close {
     .menu_container {
@@ -160,6 +187,8 @@ function closeNavbarOnMenuClick() {
   }
 
   &_open {
+    backdrop-filter: blur(7px);
+
     .nav_container {
       .menu_container {
         opacity: 1;
@@ -184,12 +213,15 @@ function closeNavbarOnMenuClick() {
   height: 100%;
   transition: $transition;
 
+  @include desktop {
+    justify-content: center;
+  }
+
   .menu_container {
     position: absolute;
     width: 100%;
     z-index: 4;
-    background-color: $background;
-    border-radius: var(--container-border);
+    background-color: rgba($background, 0.4);
     height: 100%;
     transition: $transition;
     display: flex;
@@ -197,27 +229,31 @@ function closeNavbarOnMenuClick() {
     align-items: center;
     justify-content: center;
 
+    @include desktop {
+      height: auto;
+      width: inherit;
+      position: relative;
+      background-color: rgba($d, 0.1);
+    }
+
     .menu {
       pointer-events: all;
       list-style: none;
       text-align: center;
-      margin-inline: 0;
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      padding-block: 1rem;
+      padding-block: 1.5rem;
 
-      li {
-        &:nth-child(even) {
-          margin-left: -10rem;
-        }
-        &:nth-child(odd) {
-          margin-right: -10rem;
-        }
-
-        @include tablet{
-          &:nth-child(even), &:nth-child(odd) {
-            margin: 0;
+      @include desktop {
+        &:hover {
+          .navigation {
+            .nav_title {
+              display: block;
+              width: 6.5rem;
+              opacity: 1;
+              margin-left: 1rem;
+            }
           }
         }
       }
@@ -225,9 +261,86 @@ function closeNavbarOnMenuClick() {
       li {
         transition: $transition;
 
-        a {
+        &:nth-child(even) {
+          margin-left: -10rem;
+        }
+
+        &:nth-child(odd) {
+          margin-right: -10rem;
+        }
+
+        @include desktop {
+          &:nth-child(even), &:nth-child(odd) {
+            margin: 0;
+          }
+
           &:hover {
-            color: red;
+            .navigation {
+              .nav_icon {
+
+                &:before {
+                  content: '\2022';
+                  position: absolute;
+                  transform: translateX(-50%);
+                  bottom: -1rem;
+                  left: 50%;
+                  width: 1rem;
+                  height: 1rem;
+                  color: $a;
+                  font-size: 1rem;
+                }
+              }
+
+              .nav_title{
+                color: transparent;
+                background: linear-gradient(109.6deg, $a 33%, $b 66%, $d 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                -moz-background-clip: text;
+                -moz-text-fill-color: transparent;
+
+              }
+            }
+          }
+        }
+
+        .navigation {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          @include desktop {
+            align-items: flex-end;
+            justify-content: flex-end;
+          }
+
+          .nav_title {
+            text-align: center;
+
+            @include desktop {
+              width: 0;
+              transition: width ease-in 0.3s, opacity ease-in 0.3s, margin-left ease-in 0.3s;
+              padding-left: 0;
+              opacity: 0;
+              flex-grow: 1;
+            }
+          }
+
+          .nav_icon {
+            display: none;
+
+            @include desktop {
+              position: relative;
+              margin-inline: 1rem;
+              display: block;
+              width: 1.5rem;
+              height: 1.5rem;
+
+              .icon {
+                width: 1.5rem;
+                height: 1.5rem;
+              }
+            }
           }
         }
       }
