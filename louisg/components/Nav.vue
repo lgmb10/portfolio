@@ -82,7 +82,7 @@ function closeNavbarOnMenuClick() {
   height: 25px;
   position: relative;
   z-index: 5;
-  margin: 1rem;
+  margin: 0.9rem 1rem 1rem;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -92,6 +92,10 @@ function closeNavbarOnMenuClick() {
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer;
+
+  @include tablet{
+    margin: 1rem;
+  }
 
   @include desktop {
     display: none;
@@ -165,6 +169,7 @@ function closeNavbarOnMenuClick() {
   overflow: hidden;
   border-radius: var(--container-border);
   border: none;
+  z-index: 5;
 
   @include desktop {
     right: -1.75rem;
@@ -174,7 +179,7 @@ function closeNavbarOnMenuClick() {
     transform: translateY(-50%);
     top: 50%;
     backdrop-filter: blur(40px);
-    border: 1px solid rgba($border, .2);
+    border: $border;
   }
 
   &_close {
@@ -220,7 +225,6 @@ function closeNavbarOnMenuClick() {
   .menu_container {
     position: absolute;
     width: 100%;
-    z-index: 4;
     background-color: rgba($background, 0.4);
     height: 100%;
     transition: $transition;
@@ -293,7 +297,7 @@ function closeNavbarOnMenuClick() {
 
               .nav_title{
                 color: transparent;
-                background: linear-gradient(109.6deg, $a 33%, $b 66%, $d 100%);
+                background: linear-gradient(109.6deg, $d 33%, $a 66%, $c 100%);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 -moz-background-clip: text;
@@ -316,6 +320,7 @@ function closeNavbarOnMenuClick() {
 
           .nav_title {
             text-align: center;
+            font-size: 1.5rem;
 
             @include desktop {
               width: 0;
@@ -323,6 +328,7 @@ function closeNavbarOnMenuClick() {
               padding-left: 0;
               opacity: 0;
               flex-grow: 1;
+              font-size: 1rem;
             }
           }
 

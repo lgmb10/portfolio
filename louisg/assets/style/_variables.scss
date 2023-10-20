@@ -35,19 +35,18 @@ $white : #ffffff;
 $black : #000000;
 $background : #09061f;
 $purple : #770885;
-$border : #b9b9b9;
+$border-color: #b9b9b9;
 
 $a : #a26aa9;
 $b : #4f318c;
 $c : #fbe0cd;
 $d : #776ab7;
 
-
-
-
 // FONT
-$righteous : 'Righteous', sans-serif;
+$rubik : 'Rubik', 'Arial', sans-serif;
+$playfair : 'Playfair Display', 'Arial', sans-serif;
 
 
 // UTILS
 $transition : ease-in-out 0.2s;
+$border : 1px solid rgba($border-color, .2);
