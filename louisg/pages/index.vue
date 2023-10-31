@@ -1,18 +1,76 @@
 <template>
   <main class="content">
-  <section class="presentation">
-    <div class="presentation_text">
-      <h1>Louis<br> Gambier</h1>
-      <h3>Développeur Front-End</h3>
-      <p>totototerj hdjkhvb dsjfhkbv djhbv jkdhb hsdbv hjdb v,hb vdhfb vdhjsfb vdbv dsfjbv sdfh vbsdh </p>
-    </div>
-    <div class="profile_picture">
-      <div class="img_container">
-        <img src="img/profil.jpg" alt="photo de profile">
+    <ContentSection class="presentation">
+      <div class="title mobile_center">
+        <h1>Louis<br> Gambier</h1>
+        <h2>Développeur Web</h2>
       </div>
-    </div>
-  </section>
-  
+      <div class="profile_picture" data-parallax="0.05">
+        <div class="img_container" data-parallax='{"y": -0.1, "variable": true}'>
+          <img src="~/assets/img/profil.jpg" alt="photo de profile">
+        </div>
+      </div>
+      <p class="mobile_center">Bonjour ! Jeune diplomé en master d'informatique, grâce à mes précedentes expériences je
+        me suis spécialisé dans
+        le développement Front-End.<br><br>
+        Découvrez mon profil&nbsp;&nbsp;<Icon name="fa6-solid:arrow-down-long"></Icon>
+      </p>
+    </ContentSection>
+    <ContentSection id="parcours">
+      <h3 class="section_title" data-parallax="-0.1">Mon Parcours</h3>
+      <article class="timeline">
+        <ul class="timeline_wrapper">
+          <li>
+            <div class="timeline_date">
+              <p>2023</p>
+            </div>
+            <Icon name="carbon:branch"></Icon>
+            <div class="timeline_description">
+              <p>Mastère - Expert en Ingénierie Informatique.
+                Titre RNCP Niveau&nbsp;7</p>
+              <p>Efficom. Lille</p>
+            </div>
+          </li>
+          <li>
+            <div class="timeline_date">
+              <p>2021</p>
+            </div>
+            <Icon name="carbon:branch"></Icon>
+            <div class="timeline_description">
+              <p>Bachelor - Chargé de Projets en Systèmes
+                Informatiques Appliqués. Titre RNCP Niveau&nbsp;6</p>
+              <p>Efficom. Lille</p>
+            </div>
+          </li>
+          <li>
+            <div class="timeline_date">
+              <p>2020</p>
+            </div>
+            <Icon name="carbon:branch"></Icon>
+            <div class="timeline_description">
+              <p>DUT informatique</p>
+              <p>Institut Universitaire de Technologie A de Lille.
+                Villeneuve-d’Ascq</p>
+            </div>
+          </li>
+          <li>
+            <div class="timeline_date">
+              <p>2018</p>
+            </div>
+            <Icon name="carbon:branch"></Icon>
+            <div class="timeline_description">
+              <p>Baccalauréat Technologique STI2D spécialité SIN</p>
+              <p>Lycée du Hainaut. Valenciennes.</p>
+            </div>
+          </li>
+        </ul>
+      </article>
+    </ContentSection>
+    <ContentSection id="experiences">
+      <h3 class="section_title" data-parallax="-0.1">Mes Expériences</h3>
+
+    </ContentSection>
+    <Footer/>
   </main>
 </template>
 
@@ -20,70 +78,247 @@
 </script>
 
 <style scoped lang="scss">
-.content{
-  padding: 1rem 3rem;
+.content {
+  padding: 1rem 1rem 1.5rem;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
+
+  @include tablet {
+    padding: 1rem 3rem 2rem;
+  }
 }
 
-.presentation{
-  display: flex;
-  padding-top: 5rem;
+.presentation {
+  padding-top: 0.5rem;
   width: 100%;
 
-  .presentation_text, .profile_picture{
-    width: 50%;
+  @include tablet {
+    padding-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .presentation_text{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
+  .title, > p {
+    grid-column: 1 / 2;
+  }
 
-    h1{
-      font-size: 6rem;
-      margin-bottom: 2rem;
-      line-height: 1;
+  .title {
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      margin-right: 1rem;
     }
 
-    h3{
-      font-size: 3rem;
+    h1 {
+      font-size: clamp(3.5rem, 2.7857142857142856rem + 3.571428571428571vw, 6rem);
+      margin-bottom: 1rem;
+      line-height: 1;
+
+      @include desktop {
+        margin-bottom: 2rem;
+      }
+    }
+
+    h2 {
+      color: $light-purple;
+      font-size: clamp(2rem, 1.7142857142857144rem + 1.4285714285714286vw, 3rem);
       margin-bottom: 1rem;
       font-weight: 600;
     }
   }
 
-  .profile_picture{
-    flex-grow: 1;
+  > p {
+    padding-top: 2.5rem;
+    font-size: 1.2rem;
+    line-height: 1.3;
+
+    @include tablet {
+      padding-top: 0;
+      margin-right: 1rem;
+    }
+
+
+    .icon {
+      font-size: 1rem;
+    }
+  }
+
+
+  .profile_picture {
     text-align: center;
     display: flex;
     justify-content: center;
+    grid-column: 2;
+    grid-row: 1 / 3;
 
-    .img_container{
+    .img_container {
       position: relative;
-      --border : 0.7rem;
+      height: fit-content;
+      margin-top: 1rem;
+      --border: 0.7rem;
+      width: 80%;
+      max-width: 20rem;
 
-      &:after{
+
+      @include tablet {
+        max-width: none;
+        width: fit-content;
+      }
+
+      &:after {
         content: '';
         position: absolute;
-        top: 1.5rem;
-        left: 1.5rem;
+        top: calc(var(--parallaxY, 0px) + 2rem);
+        left: 1rem;
         border: $border;
         width: 100%;
         height: 100%;
         border-radius: var(--border);
-        background-color: rgba($b, 0.4);
-        z-index: -1;
+        background-color: rgba($b, 0.3);
+
+        @include tablet {
+          left: 1.5rem;
+        }
       }
 
-      img{
+      img {
+        z-index: 2;
         display: block;
         position: relative;
-        max-width: 20rem;
+        width: 100%;
         border-radius: var(--border);
+
+        @include tablet {
+          width: 25vw;
+          min-width: 20rem;
+          max-width: 30rem;
+        }
       }
+    }
+  }
+}
+
+.timeline {
+  width: 100%;
+  max-width: 70rem;
+  margin-inline: auto;
+
+  .timeline_wrapper {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    --left-line: 3rem;
+
+
+    li {
+      display: flex;
+      padding-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+
+      &:last-child{
+        padding-bottom: 0;
+      }
+
+      @include mobile {
+        padding-left: var(--left-line);
+
+        &:first-child {
+          &:before {
+            top: 2rem;
+          }
+        }
+
+        &:last-child {
+          &:before {
+            top: inherit;
+            bottom: 3rem;
+          }
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          transform: translate(-50%, 0);
+          top: 0;
+          left: calc(-2rem + var(--left-line));
+          height: 12rem;
+          width: 5px;
+          background-color: $white;
+
+          @include tablet {
+            height: 10rem;
+          }
+        }
+      }
+
+
+      .timeline_date {
+        font-weight: 600;
+        font-size: 1.5rem;
+
+        @include mobile{
+          padding-top: 0.4rem;
+        }
+
+        @include tablet {
+          font-size: 2rem;
+        }
+
+        p {
+          position: relative;
+          color: $light-purple;
+
+          &:before {
+            content: '';
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: -2rem;
+            height: 10px;
+            width: 10px;
+            border: 5px solid $white;
+            background-color: $background;
+            border-radius: 50%;
+            z-index: 2;
+          }
+        }
+      }
+
+
+      .icon {
+        margin-inline: 0.5rem;
+        flex-shrink: 0;
+        display: block;
+        font-size: 3rem;
+
+        @include mobile {
+          font-size: 5rem;
+          margin-inline: 1rem;
+        }
+      }
+
+      .timeline_description {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        p {
+          font-size: 1.3rem;
+
+          &:last-child {
+            font-style: italic;
+            color: $a;
+          }
+        }
+      }
+
+
     }
   }
 }

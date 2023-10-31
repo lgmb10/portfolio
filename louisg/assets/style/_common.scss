@@ -8,14 +8,38 @@ body{
   margin: 0;
   box-sizing: border-box;
   color: white;
+  line-height: 1.2;
 }
 
-h1,h2{
+h1,h3{
   font-family: $playfair;
 }
 
+.section_title{
+  font-size: clamp(2.5rem, 2.3rem + 1vw, 3.5rem);
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+.text_content{
+  font-size: 1.2rem;
+
+  @include mobile{
+    font-size: inherit;
+  }
+}
+
 a{
+  transition: $transition;
   text-decoration: none;
+}
+
+.mobile_center{
+  text-align: center;
+
+  @include tablet{
+    text-align: left;
+  }
 }
 
 #blur_cursor {

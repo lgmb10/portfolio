@@ -24,19 +24,24 @@
 }
 
 :root{
-  --container-border: 0.7rem;
+  --container-border: 0.8rem;
+  --max-width : 120rem;
 
   @include tablet{
     --container-border: 1.5rem;
   }
 }
 
+
+// COLORS
 $white : #ffffff;
 $black : #000000;
 $background : #09061f;
 $purple : #770885;
-$border-color: #b9b9b9;
+$light-purple : #ab87f6;
+$border-color: rgba(#b9b9b9, .2);
 
+// color for gradient
 $a : #a26aa9;
 $b : #4f318c;
 $c : #fbe0cd;
@@ -49,4 +54,4 @@ $playfair : 'Playfair Display', 'Arial', sans-serif;
 
 // UTILS
 $transition : ease-in-out 0.2s;
-$border : 1px solid rgba($border-color, .2);
+$border : 1px solid $border-color;

@@ -28,8 +28,8 @@
 let navIcon, navMenu, mainContainer = null;
 
 const navList = [
-  {title: "Formations", icon: "fa6-solid:graduation-cap"},
-  {title: "Expérience", icon: "fa6-solid:briefcase"},
+  {title: "Parcours", icon: "fa6-solid:graduation-cap"},
+  {title: "Expériences", icon: "fa6-solid:briefcase"},
   {title: "Compétences", icon: "fa6-solid:award"},
   {title: "Passions", icon: "fa6-solid:heart"},
 ]
@@ -225,7 +225,7 @@ function closeNavbarOnMenuClick() {
   .menu_container {
     position: absolute;
     width: 100%;
-    background-color: rgba($background, 0.4);
+    background-color: rgba($background, 0.8);
     height: 100%;
     transition: $transition;
     display: flex;
@@ -241,7 +241,6 @@ function closeNavbarOnMenuClick() {
     }
 
     .menu {
-      pointer-events: all;
       list-style: none;
       text-align: center;
       display: flex;
@@ -250,6 +249,8 @@ function closeNavbarOnMenuClick() {
       padding-block: 1.5rem;
 
       @include desktop {
+        pointer-events: all;
+
         &:hover {
           .navigation {
             .nav_title {
