@@ -17,12 +17,12 @@
       </p>
     </ContentSection>
     <ContentSection id="parcours">
-      <h3 class="section_title" data-parallax="-0.1">Mon Parcours</h3>
+      <h3 class="section_title" data-parallax="-0.05">Mon Parcours</h3>
       <article class="timeline">
         <ul class="timeline_wrapper">
           <li>
             <div class="timeline_date">
-              <p>2023</p>
+              <span>2023</span>
             </div>
             <Icon name="carbon:branch"></Icon>
             <div class="timeline_description">
@@ -33,7 +33,7 @@
           </li>
           <li>
             <div class="timeline_date">
-              <p>2021</p>
+              <span>2021</span>
             </div>
             <Icon name="carbon:branch"></Icon>
             <div class="timeline_description">
@@ -44,7 +44,7 @@
           </li>
           <li>
             <div class="timeline_date">
-              <p>2020</p>
+              <span>2020</span>
             </div>
             <Icon name="carbon:branch"></Icon>
             <div class="timeline_description">
@@ -55,7 +55,7 @@
           </li>
           <li>
             <div class="timeline_date">
-              <p>2018</p>
+              <span>2018</span>
             </div>
             <Icon name="carbon:branch"></Icon>
             <div class="timeline_description">
@@ -67,8 +67,8 @@
       </article>
     </ContentSection>
     <ContentSection id="experiences">
-      <h3 class="section_title" data-parallax="-0.1">Mes Expériences</h3>
-
+      <h3 class="section_title" data-parallax="-0.05">Mes Expériences</h3>
+      <p>TEST</p>
     </ContentSection>
     <Footer/>
   </main>
@@ -133,7 +133,6 @@
 
   > p {
     padding-top: 2.5rem;
-    font-size: 1.2rem;
     line-height: 1.3;
 
     @include tablet {
@@ -224,19 +223,19 @@
         padding-bottom: 0;
       }
 
-      @include mobile {
+      @include tablet {
         padding-left: var(--left-line);
 
         &:first-child {
           &:before {
-            top: 2rem;
+            top: 1.8rem;
           }
         }
 
         &:last-child {
           &:before {
             top: inherit;
-            bottom: 3rem;
+            bottom: 3.2rem;
           }
         }
 
@@ -246,30 +245,30 @@
           transform: translate(-50%, 0);
           top: 0;
           left: calc(-2rem + var(--left-line));
-          height: 12rem;
+          height: 10rem;
           width: 5px;
           background-color: $white;
-
-          @include tablet {
-            height: 10rem;
-          }
         }
       }
 
 
       .timeline_date {
         font-weight: 600;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        padding-top: 0.2rem;
+        display: block;
 
         @include mobile{
-          padding-top: 0.4rem;
+          font-size: 1.5rem;
+          padding-top: 0.7rem;
         }
 
         @include tablet {
           font-size: 2rem;
+          padding-top: 0.4rem;
         }
 
-        p {
+        span {
           position: relative;
           color: $light-purple;
 
@@ -298,6 +297,9 @@
 
         @include mobile {
           font-size: 5rem;
+        }
+
+        @include tablet{
           margin-inline: 1rem;
         }
       }
@@ -309,7 +311,9 @@
         justify-content: space-evenly;
 
         p {
-          font-size: 1.3rem;
+          @include tablet{
+            font-size: 1.3rem;
+          }
 
           &:last-child {
             font-style: italic;
@@ -317,8 +321,6 @@
           }
         }
       }
-
-
     }
   }
 }

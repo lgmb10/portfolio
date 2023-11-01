@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   ssr: false,
 
   app: {
-      baseURL: '/lgambier.github.io/', // baseURL: '/<repository>/'
+      baseURL: '/portfolio/', // baseURL: '/<repository>/'
       buildAssetsDir: 'assets',
       head: {
           link: [

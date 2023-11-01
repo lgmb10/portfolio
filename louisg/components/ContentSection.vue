@@ -15,9 +15,13 @@ section{
   padding-top: 1rem;
 
   @include mobile{
+    margin-bottom: 5rem;
+    padding-top: 1rem;
+  }
+
+  @include tablet{
     margin-bottom: 8rem;
     padding-top: 2rem;
-
   }
 }
 
