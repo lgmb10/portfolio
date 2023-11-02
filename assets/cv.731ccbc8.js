@@ -1,0 +1,1 @@
+import{_}from"./_plugin-vue_export-helper.c27b6911.js";import{c as o,o as c,p as s,e as t,a}from"./entry.fdd93768.js";const p=e=>(s("data-v-b7a79084"),e=e(),t(),e),d=p(()=>a("embed",{src:"/cv_louis_gambier.pdf"},null,-1)),r=[d],n={__name:"cv",setup(e){return(l,i)=>(c(),o("div",null,r))}},v=_(n,[["__scopeId","data-v-b7a79084"]]);export{v as default};
