@@ -1,1 +1,0 @@
-import{_,c,o as s,p as o,f as a,a as t}from"./entry.7ee8c351.js";const d=e=>(o("data-v-17d8af1d"),e=e(),a(),e),p=d(()=>t("embed",{src:"/cv_louis_gambier.pdf"},null,-1)),n=[p],r={__name:"cv",setup(e){return(l,u)=>(s(),c("div",null,n))}},i=_(r,[["__scopeId","data-v-17d8af1d"]]);export{i as default};
