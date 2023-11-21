@@ -26,6 +26,7 @@
 :root{
   --container-border: 0.8rem;
   --max-width : 120rem;
+  --hero-height : auto;
 
   @include tablet{
     --container-border: 1.5rem;

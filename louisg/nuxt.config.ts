@@ -12,6 +12,7 @@ export default defineNuxtConfig({
       baseURL: '/portfolio/', // baseURL: '/<repository>/'
       buildAssetsDir: 'assets',
       head: {
+          title: "Louis Gambier",
           link: [
               { rel: "preconnect", href: "https://fonts.googleapis.com" },
               { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: true },
@@ -30,5 +31,5 @@ export default defineNuxtConfig({
       },
   },
 
-  modules: ["nuxt-icon"],
+  modules: ["nuxt-icon", "nuxt-swiper"],
 })

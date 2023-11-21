@@ -12,7 +12,7 @@ export function offsetTop(element, acc = 0) {
 
 /**
  * @property {HTMLElement} element
- * @property {{y: number, variable: boolean}} options
+ * @property {{y: number, variable: boolean, isMobileDisabled: boolean}} options
  */
 export class Parallax {
 
@@ -28,18 +28,22 @@ export class Parallax {
         const observer = new IntersectionObserver(this.onIntersection);
         this.insideWindow.addEventListener('scroll', this.onScroll);
         observer.observe(element);
+
+        // Prevent offsetHeight issue on scrollTop 0
+        this.insideWindow.scrollTop +=1;
+
         this.onScroll();
     }
 
     parseAttribute() {
         const defaultOptions = {
             y: 0.2,
-            variable: false
+            variable: false,
+            isMobileDisabled: false,
         }
         if (this.element.dataset.parallax.startsWith('{')) {
             return {...defaultOptions, ...JSON.parse(this.element.dataset.parallax)}
         }
-        console.log(parseFloat(this.element.dataset.parallax))
         return {...defaultOptions, y: parseFloat(this.element.dataset.parallax)}
 
     }
@@ -61,20 +65,18 @@ export class Parallax {
     }
 
     onScroll = () => {
-        const elementHeight = parseFloat(window.getComputedStyle(this.insideWindow, null).getPropertyValue("height"));
-        const screenY = this.insideWindow.scrollTop + elementHeight / 2;
-        const diffY = this.elementY - screenY;
-        const translateY = diffY * -1 * this.options.y;
-        if (this.options.variable) {
-            this.element.style.setProperty('--parallaxY', `${translateY}px`);
-        } else {
-            this.element.style.setProperty('transform', `translateY(${translateY}px)`);
+        if (!this.options.isMobileDisabled && window.innerWidth > 480) {
+            const elementHeight = parseFloat(window.getComputedStyle(this.insideWindow, null).getPropertyValue("height"));
+            const screenY = this.insideWindow.scrollTop + elementHeight / 2;
+            const diffY = this.elementY - screenY;
+            const translateY = diffY * -1 * this.options.y;
+
+            if (this.options.variable) {
+                this.element.style.setProperty('--parallaxY', `${translateY}px`);
+            } else {
+                this.element.style.setProperty('transform', `translateY(${translateY}px)`);
+            }
         }
-
-        console.log("ely : "+this.elementY);
-        console.log("elheight : "+elementHeight);
-        console.log(screenY);
-
     }
 
     /**

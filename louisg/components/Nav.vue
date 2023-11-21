@@ -81,7 +81,7 @@ function closeNavbarOnMenuClick() {
   width: 30px;
   height: 25px;
   position: relative;
-  z-index: 5;
+  z-index: 12;
   margin: 0.9rem 1rem 1rem;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -169,7 +169,7 @@ function closeNavbarOnMenuClick() {
   overflow: hidden;
   border-radius: var(--container-border);
   border: none;
-  z-index: 5;
+  z-index: 12;
 
   @include desktop {
     right: -1.75rem;

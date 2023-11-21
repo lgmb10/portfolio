@@ -16,9 +16,13 @@ h1,h3{
 }
 
 .section_title{
-  font-size: clamp(2.5rem, 2.3rem + 1vw, 3.5rem);
-  padding-bottom: 4rem;
+  font-size: clamp(2.5rem, 2.2rem + 1.5vw, 4rem);
+  padding-block: 2rem 4rem;
   text-align: center;
+
+  @include desktop{
+    padding-bottom: 6rem;
+  }
 }
 
 .text_content{
@@ -32,9 +36,13 @@ h1,h3{
 a{
   transition: $transition;
   text-decoration: none;
+
+  &:hover{
+    color: $light-purple;
+  }
 }
 
-p{
+a, p{
   font-size: 1.2rem;
 }
 

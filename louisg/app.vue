@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import DefaultLayout from "./layouts/Default.vue";
+import DefaultLayout from "./layouts/default.vue";
 import {Parallax, offsetTop} from "./composables/parallax";
 
 

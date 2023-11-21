@@ -3,20 +3,18 @@
     <div class="main_outside_wrapper">
       <div class="main_inside_container">
         <Nav></Nav>
-<!--        <div id="blur_cursor"></div>-->
+        <!--        <div id="blur_cursor"></div>-->
         <section class="header">
           <a class="link" href="https://www.linkedin.com/in/louis-gambier-b22b91172" target="_blank">
-            <svg fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px">
+            <svg fill="#FFFFFF" height="30px" viewBox="0 0 30 30" width="30px" xmlns="http://www.w3.org/2000/svg">
               <path
                   d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"/>
             </svg>
           </a>
-          <Button title="CV" url="/cv_louis_gambier.pdf"></Button>
-          <Button title="Contact" url="mailto:louisgambier10@gmail.com"></Button>
+          <Button title="CV" url="https://drive.google.com/file/d/15TIAyRQQYWB_RqP9juVzwt7mx6r2TTXR/view?usp=sharing"></Button>
+          <Button title="Contact" url="mailto:louisgambier10@gmail.com" :is-routing="false"></Button>
         </section>
         <div class="main_inside_wrapper">
-
-
           <slot/>
         </div>
       </div>
@@ -31,7 +29,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 
 .main_outside_container {
   height: 100vh;
@@ -69,6 +67,7 @@ export default {
       height: 100%;
       overflow-y: scroll;
       scroll-behavior: smooth;
+      scroll-padding-top: 2rem;
       display: flex;
       flex-direction: column;
       padding-top: 3rem;
@@ -131,9 +130,9 @@ export default {
   border-top-right-radius: var(--container-border);
   background-color: rgba($b, 0.3);
   backdrop-filter: blur(10px);
-  z-index: 4;
+  z-index: 11;
 
-  @include desktop{
+  @include desktop {
     width: fit-content;
     right: 0;
     left: inherit;
@@ -152,7 +151,7 @@ export default {
 
     &:hover {
       svg {
-        path{
+        path {
           fill: $light-purple;
         }
       }
@@ -162,7 +161,8 @@ export default {
       display: block;
       width: 100%;
       height: 100%;
-      path{
+
+      path {
         transition: $transition;
       }
     }
