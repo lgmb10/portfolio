@@ -36,7 +36,7 @@
             <ExperienceCard
                 :example="[{title : 'Atelier Syneido', link : 'https://atelier.syneido.com/'}, {title: 'Chanel'}, {title: 'Nocibé'}, {title: 'Marionnaud'}, {title: 'MEL'}, {title: 'Thermor'}]"
                 :techno="['Vue 2', 'Vanilla']"
-                description="Réalisation de landing pages pour du B2B, de présentation produits, ou encore pour la Métropole Lilloise ainsi que pour des projets internes"
+                description="Réalisation de landing pages pour du B2B, de présentation de produits, ou encore pour la Métropole Lilloise ainsi que pour des projets internes"
                 title="Landing Pages"
             />
           </SwiperSlide>
@@ -73,7 +73,7 @@
           <SwiperSlide>
             <ExperienceCard
                 :example="[{title : 'Auchan'}, {title : 'Courir'}, {title : 'Parc Astérix'}, {title : 'MACSF'}, {title : 'Thermor'}, {title : 'Walibi'}, {title : 'Oney'}]"
-                description="Intégration d'emails et créations d'assets implémnetés dans un outils d'automations de création de newsletter avec de fortes contraintes de compatibilité"
+                description="Intégration d'emails et créations d'assets implémentés dans un outil d'automatisations de création de newsletters avec de fortes contraintes de compatibilité"
                 title="Emailing"
             />
           </SwiperSlide>
@@ -107,7 +107,7 @@
             class="experiences_swiper_2">
           <SwiperSlide>
             <ExperienceCard
-                description="Réception d'appels de services d'appel d'urgences de bailleurs sociaux (incendies, inondations, blocage ascenseur, fuites de gaz, etc.)"
+                description="Réception d'appels de services d'astreinte d'urgences de bailleurs sociaux, essentiellement pour des incidents graves tels que des incendies, inondations, blocage d'ascenseurs, fuites de gaz, etc."
                 title="Réception d'appels d'urgences"
             />
           </SwiperSlide>
@@ -167,7 +167,7 @@ const swiperOptions = {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 0.5rem;
+    gap: 2rem;
     padding-bottom: 2rem;
 
     @include desktop {
@@ -216,7 +216,6 @@ const swiperOptions = {
         position: absolute;
         bottom: 0;
         right: 0;
-        z-index: -1;
         line-height: 1;
       }
 

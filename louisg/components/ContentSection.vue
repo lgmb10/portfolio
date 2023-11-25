@@ -11,7 +11,7 @@
 section{
   width: 100%;
   margin-inline: auto;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   padding-top: 1rem;
 
   @include mobile{

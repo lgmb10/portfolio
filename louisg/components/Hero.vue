@@ -11,9 +11,7 @@
         </div>
       </div>
     </div>
-    <p class="mobile_center">Bonjour ! Jeune diplomé en master d'informatique, grâce à mes précedentes expériences je
-      me suis spécialisé dans
-      le développement Front-End.<br><br>
+    <p class="mobile_center">Bonjour ! Bienvenue sur mon site ou vous pourrez en découvrir plus sur moi et mon parcours. Jeune diplômé d'un master en ingénierie informatique, je suis actuellement à la recherche d'un poste de Développeur Front-End.<br><br>
       <a href="#parcours">Découvrez mon profil&nbsp;&nbsp;<Icon name="fa6-solid:arrow-down-long"></Icon>
       </a>
     </p>

@@ -5,7 +5,7 @@
       <ul class="techno_container">
         <li class="techno" v-for="techno in props.techno">{{techno}}</li>
       </ul>
-      <p>{{props.description}}</p>
+      <p class="description">{{props.description}}</p>
     </div>
     <div class="example" v-if="props.example">
       <p>Exemple<span v-if="props.example.length > 1">s</span> :</p>
@@ -72,6 +72,10 @@ li{
       padding: 0.2rem 0.3rem;
       color: $background;
     }
+  }
+
+  .description{
+      padding-bottom: 0.5rem;
   }
 
   .example{

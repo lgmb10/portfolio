@@ -2,17 +2,20 @@
   <main class="content">
     <Hero/>
     <ContentSection id="parcours">
-      <h3 class="section_title" data-parallax="-0.08">Mon Parcours</h3>
+      <h3 class="section_title" :data-parallax="-titleParallax">Mon Parcours</h3>
       <Course />
     </ContentSection>
     <ContentSection id="experiences">
-      <h3 class="section_title" data-parallax="-0.08">Mes Expériences</h3>
+      <h3 class="section_title" :data-parallax="-titleParallax">Mes Expériences</h3>
       <Experiences />
     </ContentSection>
+    <ContentSection id="competences">
+      <h3 class="section_title" :data-parallax="-titleParallax">Mes Compétences</h3>
+      <Skills />
+    </ContentSection>
     <ContentSection id="passions">
-      <h3 class="section_title" data-parallax="-0.08">Mes Passions</h3>
-      <p>TEST eedsthbrte</p>
-      <img alt="" src="~/assets/img/f1.png" style="width: 50%;">
+      <h3 class="section_title" :data-parallax="-titleParallax">Mes Passions</h3>
+      <Hobbys />
     </ContentSection>
     <Footer />
   </main>
@@ -22,9 +25,14 @@
 import Experiences from "~/components/pageSection/Experiences.vue";
 import Footer from "~/components/pageSection/Footer.vue";
 import Course from "~/components/pageSection/Course.vue";
+import ContentSection from "../components/ContentSection.vue";
+import Skills from "~/components/pageSection/Skills.vue";
+import Hobbys from "~/components/pageSection/Hobbys.vue";
+
+const titleParallax = 0.09;
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .content {
   padding: 1rem 1rem 1.5rem;
   display: flex;
@@ -45,9 +53,7 @@ import Course from "~/components/pageSection/Course.vue";
     }
   }
 }
-</style>
 
-<style lang="scss">
 .experiences_swiper, .experiences_swiper_2 {
   margin-inline: 1rem;
   overflow: hidden;
@@ -64,5 +70,4 @@ import Course from "~/components/pageSection/Course.vue";
     margin-inline: 3rem;
   }
 }
-
 </style>

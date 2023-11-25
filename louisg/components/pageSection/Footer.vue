@@ -29,8 +29,11 @@
 
 <style scoped lang="scss">
 footer{
-  padding-top: 4rem;
   width: 100%;
+
+  @include desktop{
+    padding-top: 4rem;
+  }
 
   section{
     width: 100%;
@@ -40,7 +43,14 @@ footer{
     flex-direction: column;
     gap: 1.3rem;
 
+    @include tablet{
+      padding-top: 2rem;
+      border-top: $border;
+    }
+
     @include desktop{
+      border-top: inherit;
+      padding-top: 0;
       flex-direction: row;
       gap: 0;
     }
