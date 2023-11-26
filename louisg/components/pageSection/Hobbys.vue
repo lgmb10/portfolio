@@ -9,7 +9,7 @@
     <div class="hobby_wrapper hobby_wrapper_reverse">
       <img alt="" src="~/assets/img/piano.png">
       <article>
-        <p>J'ai pas d'inspi</p>
+        <p>La musique est très importante pour moi et je me suis essayé au piano de façon autodidacte il y a maintenant plusieurs années.</p>
       </article>
     </div>
   </div>

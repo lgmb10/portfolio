@@ -267,7 +267,7 @@ const swiperOptions = {
 
       @include tablet {
         --swiper-navigation-sides-offset: 0rem;
-        --swiper-navigation-size: 2.5rem;
+        --swiper-navigation-size: 3rem;
       }
     }
   }
