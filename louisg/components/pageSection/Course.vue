@@ -7,8 +7,10 @@
         </div>
         <Icon name="carbon:branch"></Icon>
         <div class="timeline_description">
-          <p>Mastère - Expert en Ingénierie Informatique.
-            Titre RNCP Niveau&nbsp;7</p>
+          <p>
+            Mastère - Expert en Ingénierie Informatique. Titre RNCP
+            Niveau&nbsp;7
+          </p>
           <p>Efficom. Lille</p>
         </div>
       </li>
@@ -18,8 +20,10 @@
         </div>
         <Icon name="carbon:branch"></Icon>
         <div class="timeline_description">
-          <p>Bachelor - Chargé de Projets en Systèmes
-            Informatiques Appliqués. Titre RNCP Niveau&nbsp;6</p>
+          <p>
+            Bachelor - Chargé de Projets en Systèmes Informatiques Appliqués.
+            Titre RNCP Niveau&nbsp;6
+          </p>
           <p>Efficom. Lille</p>
         </div>
       </li>
@@ -30,8 +34,9 @@
         <Icon name="carbon:branch"></Icon>
         <div class="timeline_description">
           <p>DUT informatique</p>
-          <p>Institut Universitaire de Technologie A de Lille.
-            Villeneuve-d’Ascq</p>
+          <p>
+            Institut Universitaire de Technologie A de Lille. Villeneuve-d’Ascq
+          </p>
         </div>
       </li>
       <li>
@@ -48,9 +53,7 @@
   </article>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
 .timeline {
@@ -63,7 +66,6 @@
     align-items: flex-start;
     flex-direction: column;
     --left-line: 3rem;
-
 
     li {
       display: flex;
@@ -92,7 +94,7 @@
         }
 
         &:before {
-          content: '';
+          content: "";
           position: absolute;
           transform: translate(-50%, 0);
           top: 0;
@@ -102,7 +104,6 @@
           background-color: $white;
         }
       }
-
 
       .timeline_date {
         font-weight: 600;
@@ -125,7 +126,7 @@
           color: $light-purple;
 
           &:before {
-            content: '';
+            content: "";
             position: absolute;
             transform: translate(-50%, -50%);
             top: 50%;
@@ -140,12 +141,13 @@
         }
       }
 
-
       .icon {
         margin-inline: 0.5rem;
         flex-shrink: 0;
         display: block;
         font-size: 3rem;
+        rotate: 90deg;
+        margin-top: 0.1rem;
 
         @include mobile {
           font-size: 5rem;
@@ -153,6 +155,7 @@
 
         @include tablet {
           margin-inline: 1rem;
+          margin-top: 0.2rem;
         }
       }
 

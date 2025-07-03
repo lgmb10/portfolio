@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-    <p class="mobile_center">Bonjour ! Bienvenue sur mon site ou vous pourrez en découvrir plus sur moi et mon parcours. Jeune diplômé d'un master en ingénierie informatique, je suis actuellement à la recherche d'un poste de Développeur Front-End.<br><br>
+    <p class="mobile_center">Bonjour ! Bienvenue sur mon site ou vous pourrez en découvrir plus sur moi et mon parcours. Diplômé d'un mastère en ingénierie informatique, je suis actuellement développeur Full&nbsp;Stack chez Blaaaz.<br><br>
       <a href="#parcours">Découvrez mon profil&nbsp;&nbsp;<Icon name="fa6-solid:arrow-down-long"></Icon>
       </a>
     </p>

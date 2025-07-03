@@ -32,4 +32,5 @@ export default defineNuxtConfig({
   },
 
   modules: ["nuxt-icon", "nuxt-swiper"],
+  compatibilityDate: "2025-02-11",
 })

@@ -1,19 +1,19 @@
 <template>
   <div class="skills_container">
     <div class="skills_wrapper">
-      <div :data-parallax="`{'y': -${parallaxVal}, 'stopAtInitialPosition': true}`" class="skill">
+      <div :data-parallax="`{'y': ${parallaxVal}, 'stopAtInitialPosition': true}`" class="skill">
         <img src="~/assets/img/vue.png">
         <p>Vue</p>
       </div>
-      <div :data-parallax="`{'y': ${parallaxVal}, 'stopAtInitialPosition': true}`" class="skill">
+      <div :data-parallax="`{'y': -${parallaxVal}, 'stopAtInitialPosition': true}`" class="skill">
         <img src="~/assets/img/nuxt.png">
         <p>Nuxt</p>
       </div>
-      <div :data-parallax="`{'y': -${parallaxVal}, 'stopAtInitialPosition': true}`" class="skill">
-        <img src="~/assets/img/javascript.png">
-        <p>Javascript</p>
-      </div>
       <div :data-parallax="`{'y': ${parallaxVal}, 'stopAtInitialPosition': true}`" class="skill">
+        <img src="~/assets/img/typescript.png">
+        <p>TypeScript</p>
+      </div>
+      <div :data-parallax="`{'y': -${parallaxVal}, 'stopAtInitialPosition': true}`" class="skill">
         <img src="~/assets/img/html.webp">
         <p>HTML</p>
       </div>
@@ -29,6 +29,10 @@
         <img src="~/assets/img/git.png">
         <p>Git</p>
       </div>
+      <div :data-parallax="`{'y': ${parallaxVal}, 'stopAtInitialPosition': true}`" class="skill">
+        <img src="~/assets/img/playwright-logo.svg">
+        <p>Tests&nbsp;e2e</p>
+      </div>
     </div>
   </div>
 </template>
@@ -39,11 +43,11 @@ import {Parallax} from "~/composables/parallax";
 
 const parallax = 0.1;
 let parallaxVal = ref(0);
-if (window.innerWidth > 1350) parallaxVal.value = parallax;
+if (window.innerWidth > 1311) parallaxVal.value = parallax;
 
 onMounted(() => {
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 1350) {
+    if (window.innerWidth > 1311) {
       parallaxVal.value = parallax;
     } else {
       parallaxVal.value = 0;
@@ -79,7 +83,7 @@ onMounted(() => {
     gap: 1.5rem 3rem;
 
     @include tablet {
-      gap: 3rem 5rem;
+      gap: 3rem 3.5rem;
     }
 
     .skill {

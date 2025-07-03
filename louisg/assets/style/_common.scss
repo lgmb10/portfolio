@@ -55,6 +55,22 @@ a, p{
   }
 }
 
+.only_mobile{
+  display: inline-block !important;
+
+  @include tablet{
+    display: none !important;
+  }
+}
+
+.only_desktop{
+  display: none !important;
+
+  @include tablet{
+    display: inline-block !important;
+  }
+}
+
 #blur_cursor {
   display: var(--touchscreen-display, block);
   position: absolute;
